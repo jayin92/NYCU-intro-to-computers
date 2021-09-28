@@ -5,8 +5,8 @@
 int main() {
 	int age = 18;
 	char gender = 'M';
-	printf("¦~ÄÖ¡G%d\n", age);
-	printf("©Ê§O¡G%c\n", gender);
+	printf("Age: %d\n", age);
+	printf("Gender: %c\n", gender);
 
 	system("pause");
 	return 0;

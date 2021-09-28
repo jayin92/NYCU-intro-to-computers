@@ -4,9 +4,9 @@
 
 int main() {
 	int a, b;
-	printf("請輸入第一個整數：");
+	printf("Please input the first integer: ");
 	scanf("%d", &a);
-	printf("請輸入第二個整數：");
+	printf("Please input the second integer: ");
 	scanf("%d", &b);
 	printf("a=%d\n", a);
 	printf("b=%d\n", b);
