@@ -8,7 +8,7 @@ int main(){
 		printf("Please enter an integer: ");
 		scanf("%d", &n);
 		
-		switch(n % 2){
+		switch(((n % 2)+2) % 2){
 			case 0:
 				printf("%d is an even number.\n\n", n);
 				break;
@@ -16,8 +16,7 @@ int main(){
 				printf("%d is an odd number.\n\n", n);
 				break;
 		}
-	}
-	
+	}	
 	
 	system("pause");
 	return 0;
