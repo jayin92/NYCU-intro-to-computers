@@ -13,7 +13,7 @@ int main(){
 		if(dis > 0){
 			printf("Two distinct real roots.\n");
 		} else if(dis == 0){
-			printf("Two same real roots.\n");
+			printf("Double root.\n");
 		} else {
 			printf("No real root.\n");
 		}
