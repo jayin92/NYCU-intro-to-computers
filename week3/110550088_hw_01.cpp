@@ -9,7 +9,7 @@ int main(){
 		printf("Please input a, b and c: ");
 		scanf("%d %d %d", &a, &b, &c);
 		printf("%dx^2+%dx+%d=0\n", a, b, c);
-		int dis = b * b - 4 * a * c;
+		long long dis = (long long)b * (long long)b - (long long)4 * (long long)a * (long long)c;
 		if(dis > 0){
 			printf("Two distinct real roots.\n");
 		} else if(dis == 0){
