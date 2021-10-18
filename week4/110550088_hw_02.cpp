@@ -16,7 +16,7 @@ int main() {
     int n;
     printf("Please input an integer: ");
     scanf("%d", &n);
-    printf("All perfect numebers which is less than this integer:\n");
+    printf("All perfect numebers less than this integer:\n");
     for (int i = 1; i <= n; i++) {
         if (check(i)) {
             printf("%d\n", i);
