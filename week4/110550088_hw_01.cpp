@@ -9,9 +9,9 @@ int min(int x, int y){
 
 int main(){
     int a, b;
-    printf("Please input the first integer: ");
+    printf("Please input the first positvie integer: ");
     scanf("%d", &a);
-    printf("Please input the second integer: ");
+    printf("Please input the second positvie integer: ");
     scanf("%d", &b);
     int i = min(a, b);
     printf("The greatest divisor: ");
