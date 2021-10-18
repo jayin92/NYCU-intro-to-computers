@@ -15,7 +15,7 @@ int main(){
         printf("(%d guess) %d ~ %d: ", cnt++, min, max);
         scanf("%d", &guess);
         if(guess == key){
-            printf("Bingo!\n");
+            printf("Bingo !\n");
             break;
         }
         if(guess < min || guess > max){
@@ -23,8 +23,10 @@ int main(){
             continue;
         }
         if(key > guess){
+            printf("Too small.\n");
             min = guess;
         } else {
+            printf("Too large.\n");
             max = guess;
         }
     }
