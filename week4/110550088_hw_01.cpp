@@ -14,7 +14,7 @@ int main(){
     printf("Please input the second positive integer: ");
     scanf("%d", &b);
     int i = min(a, b);
-    printf("The greatest divisor: ");
+    printf("The greatest common divisor: ");
     while(i != 0){
         if(a % i == 0 && b % i == 0){
             printf("%d\n", i);
