@@ -52,6 +52,9 @@ int main(void) {
     // YOUR CODE HERE!
     FILE* fptr;
     fptr = fopen("input.txt", "r");
+
+    FILE* fptr_out;
+    fptr_out = fopen("output.txt", "w");
 	/*
 	 * Build your morse code table here. 
 	 * For every original morse code indicating a letter, you do the conversion.
@@ -65,18 +68,15 @@ int main(void) {
 	 */
     for(i = 0 ; i < 26 ; i++){  
         int len = (int)strlen(table[i]);
-        int sz = 0;
         for(j = 0; j < len ; j++){   
             if(table[i][j] == '*'){
-                map[i][sz++] = '=';
-                map[i][sz++] = '.';
+                strcat(map[i], "=."); // map[i] = "" -> strcat(map[i], "=.") -> map[i] = "=."
             } else if(table[i][j] == '-'){
-                for(int k=0;k<3;k++) map[i][sz++] = '=';
-                map[i][sz++] = '.';
+                strcat(map[i], "===.");
             }
             // YOUR CODE HERE!
         }
-        map[i][sz-1] = '\0';
+        map[i][strlen(map[i])-1] = '\0';
 		// YOUR CODE HERE!
     }
     for(i=0;i<7;i++){
@@ -123,25 +123,20 @@ int main(void) {
 		input[strlen(input)] = '\0';
 		int last = 0;  // how many parts we have processed
 		int dot = 0;  // how many accumulated dots 
-        int sz = 0;
-	    for(i=0; input[i]; i++ ) { 
+	    for(i=0;input[i];i++) { 
             // printf("%c", input[i]); 
 	        char c = input[i];
             if(c == '='){
                 if(dot == 1){
-                    tmp[last][sz++] = '.';
+                    strcat(tmp[last], ".");
                 } else if(dot == 3){
                     last ++;
-                    sz = 0;
                 } else if(dot == 7){
                     last ++;
-                    for(int k=0;k<7;k++){
-                        tmp[last][k] = '.';
-                    }
-                    sz = 0;
+                    strcat(tmp[last], ".......");
                     last ++;
                 }
-                tmp[last][sz++] = '=';
+                strcat(tmp[last], "=");
                 dot = 0;
             } else if(c == '.'){
                 dot ++;
@@ -159,15 +154,15 @@ int main(void) {
             for(j=0;j<27;j++){
                 if(strcmp(tmp[i], map[j]) == 0){
                     if(j != 26){
-                        printf("%c", 'A'+j);
+                        fprintf(fptr_out, "%c", 'A'+j);
                     } else {
-                        printf(" ");
+                        fprintf(fptr_out, " ");
                     }
                     break;
                 }
             }
         }
-        printf("\n");
+        fprintf(fptr_out, "\n");
 	    // YOUR CODE HERE!
 	}
     
