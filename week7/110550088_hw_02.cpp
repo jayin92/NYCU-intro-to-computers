@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void transfer(){
-    FILE* fptr = fopen("input.txt", "r");
+void transfer(void){
+    FILE* fptr = fopen("self_introduction.txt", "r");
     char c;
     while((c = getc(fptr)) != EOF){
         if('a' <= c && c <= 'z'){
@@ -18,4 +18,7 @@ void transfer(){
 
 int main(){
     transfer();
+    
+    system("PAUSE");
+    return 0;
 }
