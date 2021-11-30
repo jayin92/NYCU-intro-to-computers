@@ -31,5 +31,6 @@ int main() {
         printf("%d", res[i]);
     }
     printf("\n");
+    system("PAUSE");
     return 0;
 }
