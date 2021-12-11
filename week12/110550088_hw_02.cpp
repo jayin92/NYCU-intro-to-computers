@@ -22,9 +22,9 @@ int main() {
         f_pointer **callbacks = (f_pointer**)calloc(1000, sizeof(f_pointer*));
         double *params = (double*)calloc(1000, sizeof(double));
         while(printf("%2d Enter parameter and function code(+,-,*,/): ", n)){
-            int num;
+            double num;
             char op;
-            scanf("%d %c", &num, &op);
+            scanf("%lf %c", &num, &op);
             params[n] = num;
             if(op == 'q'){
                 break;
