@@ -19,11 +19,11 @@ int main() {
         scanf("%d", &mode);
         if(mode == 0){
             int x, y, s;
-            scanf("%d %d %s", &x, &y, &s);
+            scanf("%d %d %d", &x, &y, &s);
             if(x == 0){
                 if(y < m && a[y] == NULL){
                     a[y] = (char*)calloc(s+1, sizeof(char));
-                    scanf("%s", a[y]);                    
+                    scanf("%s", a[y]);
                 }
             } else if(x == 1) {
                 if(y < n && b[y] == NULL){
