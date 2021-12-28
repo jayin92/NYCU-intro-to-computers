@@ -13,44 +13,81 @@ void insertionSort(int a[], int size);
 void printArray(int a[], int size);
 
 int main() {
-    int bub[MAXN], sel[MAXN], ins[MAXN];
-    double START, END, TIMEBUB, TIMESEL, TIMEINS;
+    int a1[MAXN], a2[MAXN], a3[MAXN];
+    int b1[MAXN], b2[MAXN], b3[MAXN];
+    int c1[MAXN], c2[MAXN], c3[MAXN];
+    double START, END, TIMEBUB[3], TIMESEL[3], TIMEINS[3];
     FILE* fptr1 = fopen("data1.txt", "r");
     FILE* fptr2 = fopen("data2.txt", "r");
     FILE* fptr3 = fopen("data3.txt", "r");
     for(int i=0;i<MAXN;i++){
-        fscanf(fptr1, "%d", bub+i);
+        fscanf(fptr1, "%d", a1+i);
+        b1[i] = c1[i] = a1[i];
     }
 
     for(int i=0;i<MAXN;i++){
-        fscanf(fptr2, "%d", sel+i);
+        fscanf(fptr2, "%d", a2+i);
+        b2[i] = c2[i] = a2[i];
+
     }
 
     for(int i=0;i<MAXN;i++){
-        fscanf(fptr3, "%d", ins+i);
+        fscanf(fptr3, "%d", a3+i);
+        b3[i] = c3[i] = a3[i];
     }
     
     START = clock();
-    bubbleSort(bub, MAXN);
+    bubbleSort(a1, MAXN);
     END = clock();
-    TIMEBUB = END - START;
+    TIMEBUB[0] = END - START;
 
     START = clock();
-    selectionSort(sel, MAXN);
+    bubbleSort(a2, MAXN);
     END = clock();
-    TIMESEL = END - START;
+    TIMEBUB[1] = END - START;
 
     START = clock();
-    insertionSort(ins, MAXN);
+    bubbleSort(a3, MAXN);
     END = clock();
-    TIMEINS = END - START;
+    TIMEBUB[2] = END - START;
+    
 
-    // printArray(bub, MAXN);
-    // printArray(sel, MAXN);
-    printArray(ins, MAXN);
-    printf("TIMEBUBBLE = %lf\n", TIMEBUB / (double)CLOCKS_PER_SEC);
-    printf("TIMESELECTION= %lf\n", TIMESEL / (double)CLOCKS_PER_SEC);
-    printf("TIMEINSERTION = %lf\n", TIMEINS / (double)CLOCKS_PER_SEC);
+    START = clock();
+    selectionSort(b1, MAXN);
+    END = clock();
+    TIMESEL[0] = END - START;
+
+    START = clock();
+    selectionSort(b2, MAXN);
+    END = clock();
+    TIMESEL[1] = END - START;
+
+    START = clock();
+    selectionSort(b3, MAXN);
+    END = clock();
+    TIMESEL[2] = END - START;
+
+    START = clock();
+    insertionSort(c1, MAXN);
+    END = clock();
+    TIMEINS[0] = END - START;
+
+    START = clock();
+    insertionSort(c2, MAXN);
+    END = clock();
+    TIMEINS[1] = END - START;
+
+    START = clock();
+    insertionSort(c3, MAXN);
+    END = clock();
+    TIMEINS[2] = END - START;
+
+    printArray(a1, MAXN);
+    printArray(b2, MAXN);
+    printArray(c3, MAXN);
+    printf("TIMEBUBBLE = %lf, %lf, %lf\n", TIMEBUB[0] / (double)CLOCKS_PER_SEC, TIMEBUB[1] / (double)CLOCKS_PER_SEC, TIMEBUB[2] / (double)CLOCKS_PER_SEC);
+    printf("TIMESELECTION = %lf, %lf, %lf\n", TIMESEL[0] / (double)CLOCKS_PER_SEC, TIMESEL[1] / (double)CLOCKS_PER_SEC, TIMESEL[2] / (double)CLOCKS_PER_SEC);
+    printf("TIMEINSERTION = %lf, %lf, %lf\n", TIMEINS[0] / (double)CLOCKS_PER_SEC, TIMEINS[1] / (double)CLOCKS_PER_SEC, TIMEINS[2] / (double)CLOCKS_PER_SEC);
 
     system("pause");
     return 0;
