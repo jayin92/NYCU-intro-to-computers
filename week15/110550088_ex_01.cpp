@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-#define MAXN 100
+#define MAXN 25000
 
 void swap(int &a, int &b);
 void bubbleSort(int a[], int size);
@@ -34,23 +34,23 @@ int main() {
     bubbleSort(bub, MAXN);
     END = clock();
     TIMEBUB = END - START;
-    printf("TIMEBUBBLE = %lf\n", TIMEBUB / (double)CLOCKS_PER_SEC);
 
     START = clock();
     selectionSort(sel, MAXN);
     END = clock();
     TIMESEL = END - START;
-    printf("TIMESELECTION= %lf\n", TIMESEL / (double)CLOCKS_PER_SEC);
 
     START = clock();
     insertionSort(ins, MAXN);
     END = clock();
     TIMEINS = END - START;
-    printf("TIMEINSERTION = %lf\n", TIMEINS / (double)CLOCKS_PER_SEC);
 
-    printArray(bub, MAXN);
-    printArray(sel, MAXN);
+    // printArray(bub, MAXN);
+    // printArray(sel, MAXN);
     printArray(ins, MAXN);
+    printf("TIMEBUBBLE = %lf\n", TIMEBUB / (double)CLOCKS_PER_SEC);
+    printf("TIMESELECTION= %lf\n", TIMESEL / (double)CLOCKS_PER_SEC);
+    printf("TIMEINSERTION = %lf\n", TIMEINS / (double)CLOCKS_PER_SEC);
 
     system("pause");
     return 0;
