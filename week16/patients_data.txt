@@ -1,0 +1,10 @@
+Isaac_Newton      0 170.3 55.1 103.7 87.6
+Maria_Curie       1 155.6 40.3 90.7 75.3
+Pierre_de_Fermat  0 174.5 92.7 150.9 184.9
+Stephen_Hawking   0 163.7 60.7 136.5 130.4
+Helen_Keller      1 143.4 49.2 111.1 127.5
+Jennifer_Lopez    1 165.2 57.9 125.4 100.4
+Niels_Abel        0 130.6 77.9 78.4 166.5
+Jolin_Tsai        1 158.9 41.3 84.6 91.6
+James_Maxwell     0 203.5 87.4 165.5 143.1
+Johann_Gauss      0 199.0 100.0 167.0 152.0
