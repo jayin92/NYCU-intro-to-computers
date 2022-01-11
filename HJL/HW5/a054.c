@@ -5,9 +5,9 @@
 typedef struct Node
 {
     char name[1000];
-    int is_dir;
+    int is_dir; // is_dir == 1, 0;
     int size;
-    struct Node** children;
+    struct Node** children; // children
     int children_sz;
 } Node;
 
@@ -16,6 +16,7 @@ int idx;
 char** split(char s[]){
     char** res = (char**)calloc(100, sizeof(char*));
     for(int i=0;i<100;i++) res[i] = (char*)calloc(105, sizeof(char));
+
     int sz = strlen(s);
     idx = 0;
     char tmp[100];
@@ -57,6 +58,8 @@ int main(){
         // for(int j=0;j<idx;j++){
         //     printf("%s ", res[j]);
         // }
+        // res = ["apple", "hw6", "basic", "test", "hello_world.html"];
+        // idx = 5;
         Node* cur = root;
         for(int j=0;j<idx-1;j++){            
             int found = 0;
@@ -74,6 +77,7 @@ int main(){
                 strcpy(tmp -> name, res[j]);
                 tmp -> size = -1;
                 tmp -> children = (Node**)calloc(1000, sizeof(Node*));
+                
                 cur -> children[cur -> children_sz] = tmp;
                 cur -> children_sz ++;
                 cur = tmp;
