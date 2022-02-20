@@ -1,4 +1,4 @@
-# nycu-intro-to-computers
+# NYCU-intro-to-computers
 
 陽明交大資工系 大一必修 計算機概論與程式設計
 
